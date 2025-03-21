@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arterial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1> Arterial</h1>
+            <p>Ingresa tus datos de presión arterial para conocer tu estado de salud.</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Sección de introducción -->
+            <section class="intro-section">
+                <h2>Bienvenido al Monitor de Presión Arterial</h2>
+                <p>La presión arterial es un indicador clave de nuestra salud cardiovascular. Mantenerla en niveles saludables es fundamental para prevenir enfermedades graves. En esta página podrás registrar tus datos y conocer el estado de tu presión arterial.</p>
+                <img src="images/presion-arterial.jpg" alt="Monitoreo de presión arterial" class="intro-img">
+            </section>
+
+            <!-- Sección informativa sobre la presión arterial -->
+            <section class="info-section">
+                <h2>¿Qué es la presión arterial?</h2>
+                <p>La presión arterial es la fuerza que ejerce la sangre contra las paredes de las arterias mientras el corazón la bombea. Se mide en dos valores:</p>
+                <ul>
+                    <li><strong>Presión sistólica:</strong> Es el valor más alto y se mide cuando el corazón late y bombea la sangre.</li>
+                    <li><strong>Presión diastólica:</strong> Es el valor más bajo y se mide cuando el corazón está en reposo entre los latidos.</li>
+                </ul>
+                <p>Una presión arterial normal suele estar por debajo de 120/80 mmHg. Si la presión arterial es consistentemente más alta, puede indicar hipertensión, lo cual es un factor de riesgo para enfermedades cardíacas, accidentes cerebrovasculares y otros problemas de salud.</p>
+                <img src="images/hipertension.jpg" alt="Hipertensión" class="info-img">
+            </section>
+
+            <section class="form-container">
+                <h2>Registro de Datos</h2>
+                <form id="bp-form">
+                    <div class="form-group">
+                        <label for="systolic">Presión Sistólica (mmHg):</label>
+                        <input type="number" id="systolic" required placeholder="Ej. 120">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="diastolic">Presión Diastólica (mmHg):</label>
+                        <input type="number" id="diastolic" required placeholder="Ej. 80">
+                    </div>
+
+                    <!-- Campo para ingresar el número de teléfono -->
+                    <div class="form-group">
+                        <label for="phone">Número de Teléfono (con WhatsApp):</label>
+                        <input type="tel" id="phone" required pattern="^\+?[1-9]\d{1,14}$" placeholder="Ej. +1234567890">
+                        <small>Por favor ingresa un número válido que esté registrado en WhatsApp.</small>
+                    </div>
+
+                    <button type="submit" class="btn">Registrar</button>
+                    <a href="recomedaciones.html">Recomendaciones</a>
+                    <br>
+                    <a href="rangos.html">Rangos</a>
+                    <br>
+                    <a href="Videos.html">Videos Alusivos</a>
+                    <br>
+                    <a href="https://chatgpt.com/c/67db9ee9-5a7c-8003-88ae-e69c15a1ed31">Haz Clic para solucionar tus dudas en CHATGPT</a>
+                </form>
+            </section>
+
+            <section class="result-container">
+                <h2>Resultados</h2>
+                <div id="bp-result" class="result-box">
+                    <!-- Los resultados se mostrarán aquí -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Monitor de Salud. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

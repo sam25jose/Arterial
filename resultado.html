@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de Presión Arterial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Estado de tu Presión Arterial</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="result-section">
+                <h2>Resultados del Registro</h2>
+                <div id="presion-result"></div>
+                <div id="message-result"></div>
+            </section>
+            <section>
+                <p>Se ha enviado un mensaje con los resultados a tu número de teléfono via WhatsApp.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Monitor de Salud. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Obtener los parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const systolic = parseInt(urlParams.get('systolic'));
+        const diastolic = parseInt(urlParams.get('diastolic'));
+        const phone = urlParams.get('phone');
+
+        const presionResult = document.getElementById("presion-result");
+        const messageResult = document.getElementById("message-result");
+
+        // Mostrar los resultados de la presión arterial
+        presionResult.innerHTML = `
+            <p><strong>Presión Sistólica:</strong> ${systolic} mmHg</p>
+            <p><strong>Presión Diastólica:</strong> ${diastolic} mmHg</p>
+        `;
+
+        // Lógica para determinar el estado de la presión arterial
+        if (systolic > 129 || diastolic > 85) {
+            messageResult.innerHTML = `
+                <h3>¡Alerta!</h3>
+                <p>Tu presión arterial está en un estado alto. Es importante que consultes a un médico para tomar medidas.</p>
+                <p>Una presión sistólica superior a 129 mmHg o una presión diastólica superior a 85 mmHg es un indicativo de que puedes estar en riesgo de hipertensión. Toma medidas para controlar tu salud cardiovascular.</p>
+            `;
+        } else {
+            messageResult.innerHTML = `
+                <h3>Todo está bien</h3>
+                <p>Tu presión arterial está en un rango saludable. Sigue manteniendo un estilo de vida activo y saludable.</p>
+            `;
+        }
+    </script>
+</body>
+</html>

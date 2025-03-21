@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendaciones para una buena presión arterial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e3f2fd;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #1565c0;
+        }
+        ul {
+            text-align: left;
+        }
+        li {
+            margin: 10px 0;
+        }
+        button {
+            background-color: #1e88e5;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #1565c0;
+        }
+        img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Consejos para mantener una buena presión arterial</h1>
+        <img src="images/Presión arterial saludable.jpg" alt="Presión arterial saludable">
+        <ul id="consejos">
+            <li>Mantén una alimentación saludable baja en sodio y rica en potasio.</li>
+            <li>Haz ejercicio regularmente, al menos 30 minutos al día.</li>
+            <li>Evita el consumo excesivo de alcohol y cafeína.</li>
+            <li>Mantén un peso saludable y controla el estrés.</li>
+            <li>Duerme bien y evita el tabaco.</li>
+        </ul>
+        <button onclick="agregarConsejo()">Mostrar otro consejo</button>
+    </div>
+    <script>
+        function agregarConsejo() {
+            const consejosExtra = [
+                "Realiza técnicas de relajación como la meditación o el yoga.",
+                "Reduce el consumo de comidas procesadas y grasas trans.",
+                "Bebe suficiente agua y mantente hidratado.",
+                "Realiza chequeos médicos regulares para monitorear tu presión arterial.",
+                "Limita el consumo de azúcar y bebidas azucaradas."
+            ];
+            
+            const lista = document.getElementById("consejos");
+            const nuevoConsejo = document.createElement("li");
+            nuevoConsejo.textContent = consejosExtra[Math.floor(Math.random() * consejosExtra.length)];
+            lista.appendChild(nuevoConsejo);
+        }
+    </script>
+</body>
+</html>
